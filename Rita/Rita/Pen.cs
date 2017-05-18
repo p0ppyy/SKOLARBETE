@@ -9,6 +9,8 @@ namespace Rita
 {
     class Pen : Tool
     {
+        //Class för pen verktyget
+
         public Pen(int x, int y, Color color, int size)
         {
             this.x = x;
@@ -19,6 +21,7 @@ namespace Rita
 
         override public void Draw(Graphics g)
         {
+            //Ritar en kvadrat på den angivna positionen
             g.FillRectangle(new SolidBrush(color), x, y, size, size);
         }
 

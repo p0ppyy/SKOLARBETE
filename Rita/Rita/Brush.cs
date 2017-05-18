@@ -10,6 +10,8 @@ namespace Rita
     class Brush : Tool
     {
         
+        //Class för pensel verktyget
+
         public Brush(int x, int y, Color color, int size) {
             this.x = x;
             this.y = y;
@@ -19,9 +21,10 @@ namespace Rita
 
         override public void Draw(Graphics  g) {
 
+            //Ritar en cirkel på den angivna positionen
+
             g.FillEllipse(new SolidBrush(color), x, y, size, size);
         }
-
 
     }
 }

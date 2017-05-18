@@ -9,6 +9,8 @@ namespace Rita
 {
     class Tool
     {
+        //Generell class för ett verktyg
+
         public int x, y, size;
         public Color color;
 
@@ -16,5 +18,7 @@ namespace Rita
         {
         
         }
+
+
     }
 }

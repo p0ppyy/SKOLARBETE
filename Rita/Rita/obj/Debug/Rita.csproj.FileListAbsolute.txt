@@ -18,3 +18,14 @@ E:\Programming\Projects\Rita\Rita\obj\Debug\Rita.pdb
 E:\Programming\Projects\Rita\Rita\obj\Debug\Rita.DrawArea.resources
 E:\Programming\Projects\Rita\Rita\obj\Debug\Rita.NewFile.resources
 E:\Programming\Projects\Rita\Rita\obj\Debug\Rita.From1.resources
+C:\Users\Maksimilian\Desktop\Rita\Rita\bin\Debug\Rita.exe.config
+C:\Users\Maksimilian\Desktop\Rita\Rita\bin\Debug\Rita.exe
+C:\Users\Maksimilian\Desktop\Rita\Rita\bin\Debug\Rita.pdb
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.csprojResolveAssemblyReference.cache
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.DrawArea.resources
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.From1.resources
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.NewFile.resources
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.Properties.Resources.resources
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.csproj.GenerateResource.Cache
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.exe
+C:\Users\Maksimilian\Desktop\Rita\Rita\obj\Debug\Rita.pdb

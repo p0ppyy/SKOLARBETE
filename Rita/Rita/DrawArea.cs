@@ -16,8 +16,12 @@ namespace Rita
         string fileName = "Untitled";
         ImageFormat format = ImageFormat.Png;
 
+        public int maxWidth = Screen.PrimaryScreen.Bounds.Width - 20;
+        public int maxHeight = Screen.PrimaryScreen.Bounds.Height - 175;
+
         public DrawArea() {
-            this.MaximumSize = new Size(1900, 905);
+            this.MaximumSize = new Size(maxWidth, maxHeight);
+            Console.WriteLine(maxHeight);
         }
 
         public DrawArea(int x, int y, int width, int height) {
@@ -26,9 +30,9 @@ namespace Rita
             this.Height = height;
             this.Location = new Point(x, y);
             this.BackColor = Color.White;
-            this.MaximumSize = new Size(1900, 905);
+            this.MaximumSize = new Size(maxWidth, maxHeight);
         }
-
+    
         public DrawArea(int x, int y, int width, int height, int scale)
         {
             this.DoubleBuffered = true;
