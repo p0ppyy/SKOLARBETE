@@ -23,6 +23,7 @@ namespace Rita
 		bool isMouseDown = false;
 
 		Rectangle mouseRect = new Rectangle();
+        Rectangle mouseRectInDrawArea = new Rectangle();
 
 		Color selectedColor = new Color();
 
@@ -74,16 +75,19 @@ namespace Rita
             //Gör en rektangel som kommer flyttas med muspekarens position.
             mouseRect = new Rectangle();
             mouseRect.Width = 2;
-			mouseRect.Height = 2;           
+			mouseRect.Height = 2;
+
+            mouseRectInDrawArea.Width = toolSize;
+            mouseRectInDrawArea.Height = toolSize;
 
             //Gör den valda färgen till vit.   
             selectedColor = Color.White;
 
-            //Sätter ursprungsvärdet på rit storleken.
-            toolSize = brushSizeBar.Value;
-
             //Sätter valt verktyg till NA.
             selectedTool = Tools.NA;
+
+            //Sätter ritstorlek till 10
+            toolSize = 10;
 
             //Initierar alla knappar och deras grafik.
             colorButton = new Button(10, 34, 30, 30, selectedColor);
@@ -93,16 +97,11 @@ namespace Rita
             brushButton = new Button(90, 34, 30, 30, Properties.Resources.brush);
             sizeButton = new Button(210, 34, 30, 30, Color.White);
 
-            //Ädrar texten på ritstorleks lablen till rätt.
-            lblBrushSize.Text = "Size: " + toolSize;
-
             //Initierar en ny rityta för att kunna ha tillgång till maxstorlek på ritytan.
             drawingArea = new DrawArea();
 
             //Skapar en ny fil.
             createNewFile();
-
-            Console.WriteLine(Tools.Pen.ToString());
 
 		}
 
@@ -124,7 +123,7 @@ namespace Rita
             {
                 //Lätt lösning på suddi, gör bara färgen till vit och
                 //avväljer alla andra verktyg
-                selectedColor = Color.FromName("Control");
+                selectedColor = Color.White;
                 eraserButton.IsSelected = true;
                 pencilButton.IsSelected = false;
                 brushButton.IsSelected = false;
@@ -157,11 +156,12 @@ namespace Rita
                 eraserButton.IsSelected = false;
                 selectedTool = Tools.Brush;
             }
+            else if (mouseRect.IntersectsWith(sizeButton.Bounds)) {
+                SizeForm form = new SizeForm();
+                form.ShowDialog();
 
-            //Annars ritar den med det valda vertyget
-
-            else {
-                drawWithTool(selectedTool, e.X, e.Y);
+                toolSize = form.size;
+                
             }
 
             //Invaliderar UI för att rita om all grafik
@@ -196,25 +196,19 @@ namespace Rita
 
 		}
 
-        private void brushSizeBar_Scroll(object sender, EventArgs e)
-        {
-            //Updaterar ritstorleken när scrollens värde ändras
-
-            toolSize = brushSizeBar.Value;
-            lblBrushSize.Text = "Sizes: " + toolSize;
-
-        }
 
         public void drawingArea_MouseMove(object sender, MouseEventArgs e) {
 
             //Körs varje gång musenpekaren rör på sig i ritytan
+
+            mouseRectInDrawArea.Location = new Point(e.X, e.Y);
 
             //Checkar om musen är nere
             if (isMouseDown)
             {
 
                 //Ritar med valt verktyg
-                drawWithTool(selectedTool, e.X, e.Y);
+                drawWithTool(selectedTool, e.X - toolSize/2, e.Y - toolSize/2);
                 //Gör ritytan inte sparad
                 drawingArea.FileSaved = false;
 
@@ -227,6 +221,7 @@ namespace Rita
 
                 tempStrokes.Clear();
             }
+            
 
         }
 
@@ -242,7 +237,7 @@ namespace Rita
 
         private void drawingArea_MouseClick(object sender, MouseEventArgs e) {
 
-            drawWithTool(selectedTool, e.X, e.Y);
+            drawWithTool(selectedTool, e.X - toolSize / 2, e.Y - toolSize / 2);
         }
 
         public void renderDrawingArea(object sender, PaintEventArgs e) {
@@ -269,6 +264,18 @@ namespace Rita
             {
                 tool.Draw(e.Graphics);
             }
+
+            switch (selectedTool) { 
+                case Tools.Brush:
+                    e.Graphics.DrawEllipse(new System.Drawing.Pen(Color.Black), mouseRectInDrawArea.X - toolSize / 2, mouseRectInDrawArea.Y - toolSize / 2, toolSize, toolSize);
+                    break;
+
+                case Tools.Pen:
+                    e.Graphics.DrawRectangle(new System.Drawing.Pen(Color.Black), mouseRectInDrawArea.X - toolSize / 2, mouseRectInDrawArea.Y - toolSize / 2, toolSize, toolSize);
+                    break;
+            
+            }
+
 
         }
 
@@ -336,7 +343,9 @@ namespace Rita
         }
 
         private void disposeDrawingArea() {
-            //Tarbort ritytan från forms.
+            //Tarbort ritytan från forms och rensar stroke listorna.
+            strokes.Clear();
+            tempStrokes.Clear();
             this.Controls.Remove(drawingArea);
         }
 
@@ -368,7 +377,7 @@ namespace Rita
                     //Och positonerar ritytan i mitten av fönstret.
                     drawingArea = new DrawArea(10, (Height / 2) - (img.Height / 2), img.Width, img.Height);
                     drawingArea.BackgroundImage = Image.FromHbitmap(img.GetHbitmap());
-                    Console.WriteLine("file 1");
+
                 }
                 else if (img.Height > drawingArea.maxHeight)
                 {
@@ -376,7 +385,7 @@ namespace Rita
                     //Och positonerar ritytan i mitten av fönstret.
                     drawingArea = new DrawArea((Width / 2) - (img.Width / 2), 100, img.Width, img.Height);
                     drawingArea.BackgroundImage = Image.FromHbitmap(img.GetHbitmap());
-                    Console.WriteLine("file 2");
+
                 }
                 else
                 {
@@ -385,7 +394,7 @@ namespace Rita
                     //Renderar bilden på ritytan
                     drawingArea = new DrawArea((Width / 2) - (img.Width / 2) - 8, (Height / 2) - (img.Height / 2), img.Width, img.Height);
                     drawingArea.BackgroundImage = Image.FromHbitmap(img.GetHbitmap());
-                    Console.WriteLine("file 3");
+
                 }
                 initDrawingArea();
             }

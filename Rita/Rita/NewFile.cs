@@ -37,5 +37,10 @@ namespace Rita
         {
 
         }
+
+        private void NewFile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

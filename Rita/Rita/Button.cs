@@ -93,11 +93,11 @@ namespace Rita
             switch (tool)
             {
                 case "Pen":
-                    g.FillRectangle(new SolidBrush(Color.Black), (bounds.Width / 2) - (toolSize / 2), (bounds.Height / 2) - (toolSize / 2), toolSize, toolSize);
+                    g.FillRectangle(new SolidBrush(Color.Black), bounds.X + (bounds.Width / 2) - toolSize / 2, bounds.Y + (bounds.Height / 2) - toolSize / 2, toolSize, toolSize);
                     break;
 
                 case "Brush":
-                    g.FillEllipse(new SolidBrush(Color.Black), bounds.X, bounds.Y, toolSize, toolSize);
+                    g.FillEllipse(new SolidBrush(Color.Black), bounds.X + (bounds.Width / 2) - toolSize / 2, bounds.Y + (bounds.Height / 2) - toolSize / 2, toolSize, toolSize);
                     break;
                         
             }

@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.brushSizeBar = new System.Windows.Forms.TrackBar();
-            this.lblBrushSize = new System.Windows.Forms.Label();
             this.renderTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,29 +37,8 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.brushSizeBar)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // brushSizeBar
-            // 
-            this.brushSizeBar.Location = new System.Drawing.Point(414, 27);
-            this.brushSizeBar.Maximum = 50;
-            this.brushSizeBar.Minimum = 10;
-            this.brushSizeBar.Name = "brushSizeBar";
-            this.brushSizeBar.Size = new System.Drawing.Size(257, 45);
-            this.brushSizeBar.TabIndex = 2;
-            this.brushSizeBar.Value = 10;
-            this.brushSizeBar.Scroll += new System.EventHandler(this.brushSizeBar_Scroll);
-            // 
-            // lblBrushSize
-            // 
-            this.lblBrushSize.AutoSize = true;
-            this.lblBrushSize.Location = new System.Drawing.Point(423, 75);
-            this.lblBrushSize.Name = "lblBrushSize";
-            this.lblBrushSize.Size = new System.Drawing.Size(30, 13);
-            this.lblBrushSize.TabIndex = 3;
-            this.lblBrushSize.Text = "Size:";
             // 
             // renderTimer
             // 
@@ -126,8 +103,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1004, 605);
-            this.Controls.Add(this.lblBrushSize);
-            this.Controls.Add(this.brushSizeBar);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Name = "From1";
@@ -137,7 +112,6 @@
             this.ResizeEnd += new System.EventHandler(this.From1_ResizeEnd);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.brushSizeBar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -147,8 +121,6 @@
 
         #endregion
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TrackBar brushSizeBar;
-        private System.Windows.Forms.Label lblBrushSize;
         private System.Windows.Forms.Timer renderTimer;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

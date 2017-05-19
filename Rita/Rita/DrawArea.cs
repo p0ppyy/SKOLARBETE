@@ -21,7 +21,6 @@ namespace Rita
 
         public DrawArea() {
             this.MaximumSize = new Size(maxWidth, maxHeight);
-            Console.WriteLine(maxHeight);
         }
 
         public DrawArea(int x, int y, int width, int height) {
