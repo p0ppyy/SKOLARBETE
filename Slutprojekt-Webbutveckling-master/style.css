@@ -20,14 +20,27 @@ body{
   font-family: 'mosklight_300';
 }
 
+.phone{
+  display: none;
 
+}
 
-nav{
+nav.web{
   height: 50px;
   width: 100%;
   background-color: #fff;
   margin: 0;
   padding: 0;
+  border-bottom: 5px solid #959595;
+}
+
+nav.phone{
+  display: none;
+  background-color: #fff;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  border-bottom: 4px solid #959595;
 }
 
 ul{
@@ -48,34 +61,101 @@ li a{
 }
 
 li a:hover{
-	color:#CCC;	
+	color:#CCC;
 }
 
-#nav-left{
+.nav-left{
   margin-left: 35px;
 
 }
 
-#nav-right{
+.nav-right{
   float: right;
 
 }
 
+.dropdown{
+  display: none;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+
+}
+
+.dropdown-item a{
+  z-index: 2;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  display: block;
+  color: #959595;
+  width: 100%;
+}
+
 .one-half{
   width: 50%;
-  height: calc(100%  - 50px);
+  height: calc(100vh - 50px);
   float: left;
-  
 
 }
 #text-left{
   display:table;
   background-color:rgba(247,161,196,0.4);
-  
+
 }
 #text-right{
 	display:table;
-  	background-color:rgba(72,94,108,0.4);
+  background-color:rgba(72,94,108,0.4);
+}
+
+.desc-section{
+  padding-top: 50px;
+  background-color:
+  text-align: center;
+  color: #fff;
+}
+
+.phone-header{
+  text-align: center;
+  display: block;
+  font-size: 50px;
+}
+.phone-desc{
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.phone-text-wrapper{
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.phone-text{
+  display: block;
+  text-align: justify;
+  font-size: 20px;
+
+}
+
+i.icon-phone{
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+
+}
+i.icon-phone:visited{
+
+}
+
+.icon-wrapper{
+  margin-top: 20px;
+  text-align: center;
 
 
 }
@@ -83,20 +163,24 @@ li a:hover{
 	display:table-cell;
 	vertical-align:middle;
 	text-align:center;
-	color:#FFF; 
-	
+	color:#FFF;
+
 }
 #header-text-big{
 	font-size:100px;
+  display: block;
 }
 #header-text-small{
-	font-size:50px;	   
+  display: block;
+	font-size:50px;
 }
 .header-description-head{
+  display: block;
 	font-size:40px;
 }
 #header-description-text{
-	text-align:left;
+  display: block;
+	text-align:justify;
 	font-size:25px;
 	margin-left:25%;
 	margin-right:25%;
@@ -104,16 +188,15 @@ li a:hover{
 }
 #contact-text{
 	font-size:50px;
-	text-align:left;
+	text-align: justify;
 	margin-left:23%;
-	margin-right:23%;	
+	margin-right:23%;
 }
 #project-wrapper{
 	width:100%;
 	height:100%;
-	overflow:auto;	
+	overflow:auto;
 }
-
 .project-box{
   /*background-color:#999;*/
   opacity:0.5;
@@ -122,9 +205,26 @@ li a:hover{
   float:left;
   display:table;
 }
-.project-box-text{
+i.icon{
+  color: #959595;
+  font-size: 20em;
+  text-decoration: none;
+}
+
+.project-head{
 	display:table-cell;
-	margin-left:20%;
+  vertical-align: middle;
+  text-align: center;
+  color: #959595;
+  font-size: 50px;
+}
+.project-desc{
+  display: none;
+  vertical-align: middle;
+  font-size: 20px;
+  text-align: center;
+  color: #959595;
+
 }
 .project-svg{
 	opacity:1;
@@ -134,10 +234,10 @@ li a:hover{
   width: 30%;
   margin: 0 auto;
   padding: 20px;
-  background: #e5e2e1;  
+  background: #e5e2e1;
 }
 #project-svg{
-	opacity:1;	
+	opacity:1;
 }
 
 .contact-form:before {
@@ -161,7 +261,7 @@ li a:hover{
 
 }
 .field-container:last-child{
-	margin: 0;	
+	margin: 0;
 }
 
 .field-container:after {
@@ -200,5 +300,45 @@ li a:hover{
   -moz-transition: height .1s;
   transition: height .1s;
 }
+@media only screen and (max-width: 1225px) {
+
+  .project-box{
+    width: 100%;
+
+  }
+
+}
 
 
+@media only screen and (max-width: 1100px) {
+  .one-half{
+    width: 100%;
+
+  }
+
+}
+
+@media only screen and (max-width: 520px) {
+
+      body{
+        background-color:#fcd9e7
+
+      }
+
+
+      .web{
+        display: none;
+
+      }
+
+      .phone{
+        display: block;
+
+      }
+
+      nav.phone{
+      display: block;
+
+    }
+
+}

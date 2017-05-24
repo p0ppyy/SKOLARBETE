@@ -1,55 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet"type="text/css" />
-    <link href="fonts/fonts.css" rel="stylesheet" type="text/css" />
 
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <title>Poppy's</title>
-  </head>
-  <body>
-  	<script src="javascript/jquery-3.2.1.min.js"></script>
-	<script src="javascript/background.js"></script>
-    <nav>
-     <ul>
-        <li id="nav-left" ><a href="#">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li id="nav-right"><a href="#">About Me</a></li>
-        </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="fonts/fonts.css" rel="stylesheet" type="text/css"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://use.fontawesome.com/5ff1a851d3.js"></script>
+  <script src="javascript/jquery-3.2.1.min.js"></script>
+  <script src="javascript/dropdown.js"></script>
+  <script src="javascript/background.js"></script>
+  <title>Poppy's</title>
+</head>
+
+<body onresize="changeBackground()">
+
+  <div class="web">
+  <nav class="web">
+    <ul>
+      <li class="nav-left"><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-right"><a href="#">About Me</a></li>
+    </ul>
+  </nav>
+
+    <section class="one-half web" id="text-left">
+      <span class="middle-text">
+        	<span id="header-text-big">
+            	Hi...
+            </span>
+            <spam id="header-text-small">
+            	Welcome to my portfolio.
+            </span>
+        </span>
+
+    </section>
+
+    <section class="one-half web" id="text-right">
+      <span class="middle-text">
+        	<span class="header-description-head">
+            	Lorem Ipsum
+            </span>
+            <span id="header-description-text">
+            	  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor nec urna fermentum pharetra.
+                Phasellus molestie ex sed diam euismod iaculis. Vivamus ac fermentum justo, in interdum orci.
+                Ut vitae massa eget velit scelerisque mollis. Cras egestas mauris mi, vel sodales mauris fermentum non.
+                Morbi facilisis, ligula sed ornare mollis, mi velit lacinia nisi, sed mattis neque erat quis tortor.
+                Proin scelerisque lorem at lacus gravida, nec consequat odio semper. Quisque porttitor, ante semper consectetur congue,
+                velit augue viverra ex, eget mattis felis quam sit amet ligula. Maecenas hendrerit justo lobortis purus euismod dapibus.
+                Suspendisse eget feugiat mauris.
+            </span>
+        </span>
+    </section>
+  </div>
+
+  <div class="phone">
+
+    <nav class="phone">
+      <ul>
+        <li><a class="nav-left" <a href="index.html">{poppy}</a></li>
+        <li class="nav-right dropdowntoggle" style="margin-right: 35px" onclick="openMenu()"><i class="fa fa-bars" aria-hidden="true"></i></li>
+      </ul>
     </nav>
 
-    <section class="one-half" id="text-left">
-   		<span class="middle-text">
-        	<div id="header-text-big">
-            	Hi...
-            </div>      
-            <div id="header-text-small">
-            	Welcome to my portfolio.
-            </div>
-        </span>
-        
-    </section>
+    <div class="dropdown">
+      <span class="dropdown-item"><a href="projects.html">Projects</a></span>
+      <span class="dropdown-item"><a href="contact.html">Contact</a></span>
+      <span class="dropdown-item"><a href="aboutme.html">About me</a></span>
+      <span class="dropdown-item"><a onclick="closeMenu()"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></span>
+    </div>
 
-    <section class="one-half" id="text-right">
-    	<span class="middle-text">
-        	<div class="header-description-head">
-            	Lorem Ipsum
-            </div>
-            <div id="header-description-text">
-            	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor nec urna fermentum pharetra. 
-                Phasellus molestie ex sed diam euismod iaculis. Vivamus ac fermentum justo, in interdum orci. 
-                Ut vitae massa eget velit scelerisque mollis. Cras egestas mauris mi, vel sodales mauris fermentum non. 
-                Morbi facilisis, ligula sed ornare mollis, mi velit lacinia nisi, sed mattis neque erat quis tortor. 
-                Proin scelerisque lorem at lacus gravida, nec consequat odio semper. Quisque porttitor, ante semper consectetur congue, 
-                velit augue viverra ex, eget mattis felis quam sit amet ligula. Maecenas hendrerit justo lobortis purus euismod dapibus. 
-                Suspendisse eget feugiat mauris.
-            </div>
+    <section class="desc-section">
+      <span class="phone-header">Hi...</span>
+      <span class="phone-desc">Welcome to my portfolio.</span>
+      <div class="phone-text-wrapper">
+        <span class="phone-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor nec urna fermentum pharetra.
+        Phasellus molestie ex sed diam euismod iaculis. Vivamus ac fermentum justo, in interdum orci.
+        Ut vitae massa eget velit scelerisque mollis. Cras egestas mauris mi, vel sodales mauris fermentum non.
+        Morbi facilisis, ligula sed ornare mollis, mi velit lacinia nisi, sed mattis neque erat quis tortor.
+        Proin scelerisque lorem at lacus gravida, nec consequat odio semper. Quisque porttitor, ante semper consectetur congue,
+        velit augue viverra ex, eget mattis felis quam sit amet ligula. Maecenas hendrerit justo lobortis purus euismod dapibus.
+        Suspendisse eget feugiat mauris.
         </span>
-    </section>
+      </div>
+      <div class="icon-wrapper">
+        <a href="https://github.com/p0ppyy"><i class="fa fa-github icon-phone" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/p0ppylol"><i class="fa fa-twitter icon-phone" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/maskimiljan"><i class="fa fa-facebook-official icon-phone" aria-hidden="true"></i></a>
+        <a href="https://www.twitch.tv/knutyytwitch"><i class="fa fa-twitch icon-phone" aria-hidden="true"></i></a>
 
-  </body>
+      </div>
+    </section>
+  </div>
+
+</body>
+
 </html>
